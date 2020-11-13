@@ -1,1 +1,106 @@
-<p>tag-list works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      
+    </ng-container>
+  
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="tag_name">
+        <th class="search-container" mat-header-cell *matHeaderCellDef>
+            <mat-form-field class="search-field" appearance="outline">
+              <mat-label>Axtar</mat-label>
+              <input matInput >
+            </mat-form-field>
+          </th>
+
+      <td mat-cell *matCellDef="let element"> {{element.tag_name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="tag_type">
+        <th class="search-container" mat-header-cell *matHeaderCellDef>
+            <mat-form-field class="search-field" appearance="outline">
+              <mat-label>Axtar</mat-label>
+              <input matInput >
+            </mat-form-field>
+          </th>
+     
+      <td mat-cell *matCellDef="let element"> {{element.tag_type}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="store_count">
+        <th class="search-container" mat-header-cell *matHeaderCellDef>
+            <mat-form-field class="search-field" appearance="outline">
+              <mat-label>Axtar</mat-label>
+              <input matInput >
+            </mat-form-field>
+          </th>
+      <td mat-cell *matCellDef="let element"> {{element.store_count}} </td>
+    </ng-container>
+
+     <!-- Symbol Column -->
+     <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"> 
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            
+        </td>
+      </ng-container>
+
+       <!-- Symbol Column -->
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element" > 
+            <img src="assets/images/copy.png" (click)="openDropDown()">
+
+            
+
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#home">Edit</a>
+                <a href="#delete">Delete</a>
+            </div>
+         </td>
+      </ng-container>
+  
+
+    <ng-container matColumnDef="header-row-1-group" >
+        <th mat-header-cell *matHeaderCellDef class="header"> No. </th>
+    </ng-container>
+
+    <ng-container matColumnDef="header-row-2-group" >
+        <th mat-header-cell *matHeaderCellDef class="header"> Tag Name </th>
+    </ng-container>
+    <ng-container matColumnDef="header-row-3-group" class="header">
+        <th mat-header-cell *matHeaderCellDef class="header"> Tag Type </th>
+    </ng-container>
+    <ng-container matColumnDef="header-row-4-group" class="header">
+        <th mat-header-cell *matHeaderCellDef class="header"> Store Count </th>
+    </ng-container>
+    <ng-container matColumnDef="header-row-5-group" class="header">
+        <th mat-header-cell *matHeaderCellDef class="header"> Status </th>
+    </ng-container>
+    <ng-container matColumnDef="header-row-6-group" class="header">
+        <th mat-header-cell *matHeaderCellDef class="header">  </th>
+    </ng-container>
+
+    <tr mat-header-row
+    *matHeaderRowDef="['header-row-1-group','header-row-2-group',
+    'header-row-3-group', 'header-row-4-group', 'header-row-5-group', 'header-row-6-group']"></tr>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <div class="load-btn">
+    <button mat-button (click)="onButtonClick()">Load more</button>
+  </div>
+  

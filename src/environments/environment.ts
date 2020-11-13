@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  httpRequestUrl: "https://dev-api.fooderos.com/api/v1/",
+  appKey: 'PXvr6k9RyeauDkLqbbcREK2PlpBFeWij'
 };
 
 /*

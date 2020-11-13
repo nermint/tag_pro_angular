@@ -11,12 +11,17 @@ import { SidebarModule } from './core/components/sidebar/sidebar.module';
 
 // material
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { TagListComponent } from './pages/tag/tag-list/tag-list.component';
+
+
+import { HeaderLanguageComponent } from './shared/header-language/header-language.component';
+
+import { MatTabsModule } from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TagListComponent,
+    HeaderLanguageComponent,
     
   ],
   imports: [
@@ -27,7 +32,9 @@ import { TagListComponent } from './pages/tag/tag-list/tag-list.component';
     DashboardModule,
     HeaderModule,
     ToggleSidebarModule,
-    SidebarModule
+    SidebarModule,
+    MatTabsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
