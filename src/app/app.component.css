@@ -1,0 +1,15 @@
+.mat-drawer-content {
+    /* height: 100vh !important; */
+    height: auto;
+    background: #fff;
+}
+
+::ng-deep .mat-drawer-content{
+    overflow: hidden;
+}
+
+::ng-deep * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
